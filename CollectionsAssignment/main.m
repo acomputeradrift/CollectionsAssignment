@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+//Make the sports array mutable -done
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSMutableArray *sports = [[NSMutableArray alloc]initWithObjects:@"baseball", @"soccer", @"football", @"hockey", @"swimming", nil];
-       
-        NSLog(@"The second sport is %@", sports[1]);
+        [sports removeLastObject];
+        [sports insertObject:@"swimming" atIndex:0];
         
+        for (NSString *w in sports){
+            NSLog(@"%@\n", w);
+        }
     }
     return 0;
 }
