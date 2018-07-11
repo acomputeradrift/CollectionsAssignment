@@ -11,13 +11,26 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSMutableArray *sports = [[NSMutableArray alloc]initWithObjects:@"baseball", @"soccer", @"football", @"hockey", @"swimming", nil];
-        [sports removeLastObject];
-        [sports insertObject:@"swimming" atIndex:0];
-        
-        for (NSString *w in sports){
-            NSLog(@"%@\n", w);
-        }
+//        NSMutableArray *sports = [[NSMutableArray alloc]initWithObjects:@"baseball", @"soccer", @"football", @"hockey", @"swimming", nil];
+//        [sports removeLastObject];
+//        [sports insertObject:@"swimming" atIndex:0];
+//
+//        for (NSString *w in sports){
+//            NSLog(@"%@\n", w);
+//        }
+    
+        NSDictionary *sports = @{
+                                 @"⚾️":@"baseball",
+                                 @"⚽︎":@"soccer",
+                                 @"🏈":@"football",
+                                 @"🏒":@"hockey",
+                                 @"🏊‍♂️":@"swimming",
+                                 };
+        NSArray *yourKeys = [sports allKeys];
+        for (NSString *w in yourKeys)
+        {
+                    NSLog(@"%@\n", w);
     }
     return 0;
+}
 }
